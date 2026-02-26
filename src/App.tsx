@@ -14,10 +14,8 @@ import { Button } from "@/components/ui/button";
 import Index from "./pages/Index";
 import NotFound from "./pages/NotFound";
 
-const BARBA_NAPOLI_URL = "/barba-napoli/Barba%20Napoli%20Shirts%20%E2%80%93%20Vangelis.html";
-
-const RedirectToStatic = () => {
-  window.location.href = BARBA_NAPOLI_URL;
+const RedirectToVangelis = () => {
+  window.location.href = "https://vangelisclothing.com/collections/barba-napoli-shirts";
   return null;
 };
 
@@ -117,7 +115,7 @@ const AppContent = () => {
   return (
     <>
       <Routes>
-        <Route path="/" element={<RedirectToStatic />} />
+        <Route path="/" element={<RedirectToVangelis />} />
         <Route path="/app" element={<Index />} />
         <Route path="*" element={<NotFound />} />
       </Routes>
