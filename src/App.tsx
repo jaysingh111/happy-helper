@@ -8,6 +8,11 @@ import NotFound from "./pages/NotFound";
 
 const BARBA_NAPOLI_URL = "/barba-napoli/Barba%20Napoli%20Shirts%20%E2%80%93%20Vangelis.html";
 
+const RedirectToStatic = () => {
+  window.location.href = BARBA_NAPOLI_URL;
+  return null;
+};
+
 const queryClient = new QueryClient();
 
 const App = () => (
@@ -17,7 +22,7 @@ const App = () => (
       <Sonner />
       <BrowserRouter>
         <Routes>
-          <Route path="/" element={<Navigate to={BARBA_NAPOLI_URL} replace />} />
+          <Route path="/" element={<RedirectToStatic />} />
           <Route path="/app" element={<Index />} />
           {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
           <Route path="*" element={<NotFound />} />
