@@ -1,0 +1,112 @@
+/* Happy Helper fixed overlay – theme-aligned (same as app) */
+#happy-helper-widget {
+  --hh-bg: hsl(0, 0%, 100%);
+  --hh-fg: hsl(222.2, 84%, 4.9%);
+  --hh-border: hsl(214.3, 31.8%, 91.4%);
+  --hh-accent: hsl(210, 40%, 96.1%);
+  --hh-accent-fg: hsl(222.2, 47.4%, 11.2%);
+  --hh-radius: 0.5rem;
+  --hh-z: 2147483647;
+}
+
+#happy-helper-btn {
+  position: fixed;
+  bottom: 1.5rem;
+  right: 1.5rem;
+  z-index: var(--hh-z);
+  width: 3.5rem;
+  height: 3.5rem;
+  border-radius: 50%;
+  overflow: hidden;
+  border: 2px solid var(--hh-border);
+  background: var(--hh-bg);
+  box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+  cursor: pointer;
+  padding: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: transform 0.15s ease;
+}
+#happy-helper-btn:hover { transform: scale(1.05); }
+#happy-helper-btn:focus {
+  outline: none;
+  box-shadow: 0 0 0 2px var(--hh-bg), 0 0 0 4px hsl(222.2, 84%, 4.9%);
+}
+#happy-helper-btn img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+#happy-helper-overlay {
+  position: fixed;
+  inset: 0;
+  z-index: var(--hh-z);
+  background: rgba(0, 0, 0, 0.8);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 1rem;
+}
+#happy-helper-modal {
+  background: var(--hh-bg);
+  color: var(--hh-fg);
+  border: 1px solid var(--hh-border);
+  border-radius: var(--hh-radius);
+  box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.25);
+  max-width: 28rem;
+  width: 100%;
+  padding: 1.5rem;
+  position: relative;
+}
+#happy-helper-modal h2 {
+  margin: 0 0 1rem;
+  font-size: 1.125rem;
+  font-weight: 600;
+  line-height: 1.2;
+}
+#happy-helper-modal .hh-close {
+  position: absolute;
+  top: 1rem;
+  right: 1rem;
+  width: 2rem;
+  height: 2rem;
+  border: none;
+  background: transparent;
+  border-radius: var(--hh-radius);
+  cursor: pointer;
+  color: var(--hh-fg);
+  opacity: 0.7;
+  font-size: 1.25rem;
+  line-height: 1;
+  padding: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+#happy-helper-modal .hh-close:hover { opacity: 1; }
+#happy-helper-modal .hh-buttons {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+  min-height: 180px;
+  justify-content: center;
+}
+#happy-helper-modal .hh-btn {
+  width: 100%;
+  padding: 0.5rem 1rem;
+  text-align: left;
+  font-size: 1rem;
+  color: var(--hh-fg);
+  background: var(--hh-bg);
+  border: 1px solid var(--hh-border);
+  border-radius: var(--hh-radius);
+  cursor: pointer;
+  transition: background 0.15s, color 0.15s;
+}
+#happy-helper-modal .hh-btn:hover {
+  background: var(--hh-accent);
+  color: var(--hh-accent-fg);
+}
